@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import Circle from './components/Circle'
 import Square from './components/Square'
 import Triangle from './components/Triangle'
@@ -9,6 +8,7 @@ function App() {
     <div>
       <Layout Geometry={Square} />
       <Layout Geometry={Circle} />
+      <Layout Geometry={Triangle} />
 
       {/* <Layout>
         <Square />
