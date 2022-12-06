@@ -4,10 +4,22 @@ import Triangle from './components/Triangle'
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <div>
+        <input type="number" />
+        <input type="color" />
       <Square />
-      <Circle />
+      </div>
+      <div>
+        <input type="number" />
+        <input type="color" />
       <Triangle />
+      </div>
+      <div>
+        <input type="number" />
+        <input type="color" />
+      <Circle />
+      </div>
     </div>
   )
 }
