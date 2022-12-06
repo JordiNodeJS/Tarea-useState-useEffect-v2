@@ -1,7 +1,7 @@
-const Square = () => {
+const Square = ({ size = 100, color = 'blue' }) => {
   return (
-    <svg width="100" height="100">
-      <rect x="5" y="5" width="90" height="90" fill="blue" />
+    <svg width={size} height={size}>
+      <rect x="5" y="5" width={size - 10} height={size - 10} fill={color} />
       Square.
     </svg>
   )

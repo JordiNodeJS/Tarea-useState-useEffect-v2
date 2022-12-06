@@ -36,6 +36,10 @@ input {
   display: block;
   width: 100px !important;
 }
+input[type="text"] {
+  width: 20ch !important;
+}
+
 
 div > div {
   display: inline-flex;
@@ -48,7 +52,6 @@ div > div {
 svg {
   display: inline-block;
   margin: 1rem;
-  fill: blue;
   stroke: pink;
   stroke-width: 5;
   fill-opacity: 0.1;
