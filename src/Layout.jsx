@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { useEffect, useState } from 'react'
+import { useEffect, useState} from 'react'
 
 const Layout = ({ Geometry }) => {
   const [global, setGlobal] = useState({})
@@ -11,13 +11,12 @@ const Layout = ({ Geometry }) => {
     if (isNaN(value) || +value < 1) value = 100
     setSize(value)
   }
-
   const handleColor = ({ target: { value } }) => setColor(value)
 
   useEffect(() => {
     if (global.triangleColor === '#000000') return alert('black')
     console.log(global)
-  }, [color])
+  }, [color, size])
 
   return (
     <div>

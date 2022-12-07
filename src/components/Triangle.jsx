@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 
 const Triangle = ({ size = 100, color = 'blue', pullData }) => {
   useEffect(() => {
-    pullData({ triangleColor: color, triangleSize: size })
-  }, [color])
+    pullData({ triangleSize: size, triangleColor: color })
+  }, [color, size])
 
   return (
     <svg height={size} width={size}>

@@ -6,8 +6,8 @@ import Layout from './Layout'
 function App() {
   return (
     <div>
-      {/* <Layout Geometry={Square} />
-      <Layout Geometry={Circle} /> */}
+      <Layout Geometry={Square} />
+      <Layout Geometry={Circle} />
       <Layout Geometry={Triangle} />
     </div>
   )
