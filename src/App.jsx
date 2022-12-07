@@ -12,7 +12,7 @@ function App() {
     triangleSize: 100,
     triangleColor: '#b4008d'
   })
-
+ const [alert, setAlert] = useState('')
   const {
     circleSize,
     circleColor,
@@ -24,13 +24,14 @@ function App() {
 
   useEffect(() => {
     if (circleSize === squareSize && squareSize === triangleSize)
-      alert('same size')
+      setAlert('same size')
     if (circleColor === squareColor && squareColor === triangleColor)
-      alert('same color')
+      setAlert('same color')
   }, [geometry])
 
   return (
     <div>
+      <div className="alert">{alert}</div>
       <Circle size={circleSize} color={circleColor} />
       <input
         type="number"
