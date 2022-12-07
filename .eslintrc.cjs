@@ -17,6 +17,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/self-closing-comp': 'warn',
     'arrow-parens': ['error', 'as-needed'],
+    curly: ['error', 'multi'],
     'space-before-function-paren': [
       'error',
       {

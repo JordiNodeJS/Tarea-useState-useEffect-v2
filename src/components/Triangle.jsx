@@ -1,10 +1,4 @@
-import { useEffect } from 'react'
-
-const Triangle = ({ size = 100, color = 'blue', pullData }) => {
-  useEffect(() => {
-    pullData({ triangleSize: size, triangleColor: color })
-  }, [color, size])
-
+const Triangle = ({ size = 100, color = 'blue' }) => {
   return (
     <svg height={size} width={size}>
       <polygon
