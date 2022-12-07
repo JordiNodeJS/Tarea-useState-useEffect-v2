@@ -5,14 +5,21 @@ import Triangle from './components/Triangle'
 import Layout from './Layout'
 
 function App() {
-  const [global, setGlobal] = useState({})
-  const pullData = data => setGlobal(prev => ({ ...prev, ...data }))
+  const [geometry, setGeometry] = useState({ circleSize: 50 })
+  const handleGeometry = ({ target: { value } }) =>
+    setGeometry(prev => ({ ...prev, circleSize: value }))
+
+  const { circleSize } = geometry
 
   return (
     <div>
-      <Layout Geometry={Square} global={global} pullData={pullData} />
-      <Layout Geometry={Circle} global={global} pullData={pullData} />
-      <Layout Geometry={Triangle} global={global} pullData={pullData} />
+      <Circle size={circleSize} />
+      <input type="number" onChange={handleGeometry} value={circleSize} />
+      {/* <input type="color" onChange={() => handleGlobal({})} value={color} /> */}
+      <hr />
+      {/* <Square /> */}
+      <hr />
+      {/* <Triangle /> */}
     </div>
   )
 }
