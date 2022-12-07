@@ -5,7 +5,6 @@ const Circle = ({ size = 100, color = 'blue' }) => {
         cx={size / 2}
         cy={size / 2}
         r={(size - 5) / 2}
-        stroke="black"
         fill={color}
       />
       Circle.

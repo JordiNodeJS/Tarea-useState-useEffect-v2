@@ -2,15 +2,18 @@ import { useState } from 'react'
 import Circle from './components/Circle'
 import Square from './components/Square'
 import Triangle from './components/Triangle'
-import Layout from './Layout'
 
 function App() {
   const [geometry, setGeometry] = useState({
     circleSize: 50,
-    circleColor: '#555555'
+    circleColor: '#05ad54',
+    squareSize: 60,
+    squareColor: '#b96c00',
+    triangleSize: 100,
+    triangleColor: '#b4008d'
   })
 
-  const { circleSize, circleColor } = geometry
+  const { circleSize, circleColor, squareSize, squareColor, triangleSize, triangleColor } = geometry
 
   return (
     <div>
@@ -29,11 +32,39 @@ function App() {
         }
         value={circleColor}
       />
-      {/* <input type="color" onChange={() => handleGlobal({})} value={color} /> */}
       <hr />
-      {/* <Square /> */}
+      <Square size={squareSize} color={squareColor} />
+      <input
+        type="number"
+        onChange={({ target: { value } }) =>
+          setGeometry(prev => ({ ...prev, squareSize: value }))
+        }
+        value={squareSize}
+      />
+      <input
+        type="color"
+        onChange={({ target: { value } }) =>
+          setGeometry(prev => ({ ...prev, squareColor: value }))
+        }
+        value={squareColor}
+      />
       <hr />
-      {/* <Triangle /> */}
+      <Triangle size={triangleSize} color={triangleColor} />
+      <input
+        type="number"
+        onChange={({ target: { value } }) =>
+          setGeometry(prev => ({ ...prev, triangleSize: value }))
+        }
+        value={triangleSize}
+      />
+      <input
+        type="color"
+        onChange={({ target: { value } }) =>
+          setGeometry(prev => ({ ...prev, triangleColor: value }))
+        }
+        value={triangleColor}
+      />
+      
     </div>
   )
 }
