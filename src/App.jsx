@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Circle from './components/Circle'
 import Square from './components/Square'
 import Triangle from './components/Triangle'
@@ -13,7 +13,21 @@ function App() {
     triangleColor: '#b4008d'
   })
 
-  const { circleSize, circleColor, squareSize, squareColor, triangleSize, triangleColor } = geometry
+  const {
+    circleSize,
+    circleColor,
+    squareSize,
+    squareColor,
+    triangleSize,
+    triangleColor
+  } = geometry
+
+  useEffect(() => {
+    if (circleSize === squareSize && squareSize === triangleSize)
+      alert('same size')
+    if (circleColor === squareColor && squareColor === triangleColor)
+      alert('same color')
+  }, [geometry])
 
   return (
     <div>
@@ -64,7 +78,6 @@ function App() {
         }
         value={triangleColor}
       />
-      
     </div>
   )
 }
