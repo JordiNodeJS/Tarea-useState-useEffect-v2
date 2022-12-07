@@ -1,25 +1,18 @@
+import { useState } from 'react'
 import Circle from './components/Circle'
 import Square from './components/Square'
 import Triangle from './components/Triangle'
+import Layout from './Layout'
 
 function App() {
+  const [global, setGlobal] = useState({})
+  const pullData = data => setGlobal(prev => ({ ...prev, ...data }))
+
   return (
     <div>
-      <div>
-        <input type="number" />
-        <input type="color" />
-      <Square />
-      </div>
-      <div>
-        <input type="number" />
-        <input type="color" />
-      <Triangle />
-      </div>
-      <div>
-        <input type="number" />
-        <input type="color" />
-      <Circle />
-      </div>
+      <Layout Geometry={Square} global={global} pullData={pullData} />
+      <Layout Geometry={Circle} global={global} pullData={pullData} />
+      <Layout Geometry={Triangle} global={global} pullData={pullData} />
     </div>
   )
 }

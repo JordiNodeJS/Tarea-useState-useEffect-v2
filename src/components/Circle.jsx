@@ -1,7 +1,18 @@
-const Circle = () => {
+import { useEffect } from 'react'
+
+const Circle = ({ size = 100, color = 'blue', pullData }) => {
+  useEffect(() => {
+    pullData({ circleSize: size, circleColor: color })
+  }, [color, size])
   return (
-    <svg height="100" width="100">
-      <circle cx="50" cy="50" r="45" stroke="black" fill="red" />
+    <svg width={size} height={size}>
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={(size - 5) / 2}
+        stroke="black"
+        fill={color}
+      />
       Circle.
     </svg>
   )

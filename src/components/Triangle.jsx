@@ -1,7 +1,16 @@
-const Triangle = () => {
+import { useEffect } from 'react'
+
+const Triangle = ({ size = 100, color = 'blue', pullData }) => {
+  useEffect(() => {
+    pullData({ triangleSize: size, triangleColor: color })
+  }, [color, size])
+
   return (
-    <svg height="100" width="100">
-      <polygon points="10,90 50,10 90,90" />
+    <svg height={size} width={size}>
+      <polygon
+        points={`10,${size - 10} ${size / 2},10 ${size - 10},${size - 10}`}
+        fill={color}
+      />
       Triangle.
     </svg>
   )
